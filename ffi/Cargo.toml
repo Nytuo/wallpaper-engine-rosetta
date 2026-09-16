@@ -1,0 +1,16 @@
+[package]
+name = "wer-ffi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+# `staticlib`/`cdylib` for consumption from Swift (macOS) and C++ (Windows);
+# `rlib` kept so `cargo test` still works on this crate directly.
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+wer-engine = { path = "../engine" }
+wer-scene = { path = "../scene" }
+serde_json.workspace = true
+tracing.workspace = true

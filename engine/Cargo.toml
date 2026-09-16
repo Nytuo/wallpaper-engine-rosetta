@@ -1,0 +1,19 @@
+[package]
+name = "wer-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+wer-scene = { path = "../scene" }
+wer-video = { path = "../video" }
+thiserror.workspace = true
+tracing.workspace = true
+wgpu = "22"
+naga = "22.1"
+pollster = "0.3"
+bytemuck = { version = "1", features = ["derive"] }
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[dev-dependencies]
+serde_json = "1"
